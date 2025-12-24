@@ -18,9 +18,6 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-// Import dayjs plugin types for TypeScript support
-import 'dayjs/plugin/utc';
-import 'dayjs/plugin/timezone';
 import { t } from '@superset-ui/core';
 import { Select } from '@superset-ui/core/components';
 import { isDST, extendedDayjs } from '../../utils/dates';

@@ -25,9 +25,6 @@ import {
   useCallback,
   ReactNode,
 } from 'react';
-// Import dayjs plugin types for TypeScript support
-import 'dayjs/plugin/utc';
-import 'dayjs/plugin/timezone';
 import {
   isFeatureEnabled,
   FeatureFlag,
@@ -97,6 +94,7 @@ import { NotificationMethod } from './components/NotificationMethod';
 import { buildErrorTooltipMessage } from './buildErrorTooltipMessage';
 
 const TIMEOUT_MIN = 1;
+const COLLAPSE_ANIMATION_DURATION = 220;
 const TEXT_BASED_VISUALIZATION_TYPES = [
   VizType.PivotTable,
   'table',
@@ -2058,7 +2056,7 @@ const AlertReportModal: FunctionComponent<AlertReportModalProps> = ({
                 // First time, delay to avoid blocking panel animation
                 setTimeout(() => {
                   setShouldRenderTimezoneSelector(true);
-                }, 220); // Match Collapse animation duration
+                }, COLLAPSE_ANIMATION_DURATION); // Match Collapse animation duration
               }
             }
           }}
