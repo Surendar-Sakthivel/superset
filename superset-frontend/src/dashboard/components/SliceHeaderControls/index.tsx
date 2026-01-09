@@ -498,7 +498,7 @@ const SliceHeaderControls = (
     newMenuItems.push({
       key: MenuKeys.EmbedChart,
       label: t('Embed chart'),
-      icon: <Icons.CodeOutlined css={dropdownIconsStyles} />,
+      icon: <Icons.ExportOutlined css={dropdownIconsStyles} />,
     });
   }
 
@@ -608,6 +608,7 @@ const SliceHeaderControls = (
       />
 
       <EmbeddedChartModal
+        chartId={slice.slice_id}
         formData={props.formData}
         show={embedModalIsOpen}
         onHide={() => setEmbedModalIsOpen(false)}

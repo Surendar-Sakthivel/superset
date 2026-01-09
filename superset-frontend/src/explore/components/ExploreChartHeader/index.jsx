@@ -174,8 +174,13 @@ export const ExploreChartHeader = ({
     [redirectSQLLab, history],
   );
 
-  const [menu, isDropdownVisible, setIsDropdownVisible, streamingExportState] =
-    useExploreAdditionalActionsMenu(
+  const [
+    menu,
+    isDropdownVisible,
+    setIsDropdownVisible,
+    streamingExportState,
+    embedChartModal,
+  ] = useExploreAdditionalActionsMenu(
       latestQueryFormData,
       canDownload,
       slice,
@@ -355,6 +360,8 @@ export const ExploreChartHeader = ({
         onDownload={streamingExportState.onDownload}
         progress={streamingExportState.progress}
       />
+
+      {embedChartModal}
     </>
   );
 };
