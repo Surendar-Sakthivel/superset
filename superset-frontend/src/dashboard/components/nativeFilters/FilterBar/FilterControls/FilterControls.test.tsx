@@ -36,7 +36,7 @@ const createMockFilter = (id: string, name: string) => ({
   cascadeParentIds: [],
   scope: {
     rootPath: ['ROOT_ID'],
-    excluded: [],
+    excluded: [] as string[],
   },
   isInstant: true,
   allowsMultipleValues: true,
@@ -226,7 +226,7 @@ test('FilterControls should correctly pass isOverflowing prop to filter controls
 
 test('FilterControls should handle empty filters list', () => {
   const state = getDefaultState(FilterBarOrientation.Vertical);
-  state.nativeFilters.filters = {};
+  state.nativeFilters.filters = {} as any;
 
   const { container } = setup(state);
   expect(container).toBeInTheDocument();
